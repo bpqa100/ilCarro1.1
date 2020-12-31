@@ -1,4 +1,4 @@
-package com.telran.qa26.ilCarro;
+package com.telran.qa26.ilCarro.application;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

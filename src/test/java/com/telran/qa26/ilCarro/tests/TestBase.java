@@ -1,5 +1,6 @@
-package com.telran.qa26.ilCarro;
+package com.telran.qa26.ilCarro.tests;
 
+import com.telran.qa26.ilCarro.application.AppManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 

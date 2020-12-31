@@ -1,4 +1,4 @@
-package com.telran.qa26.ilCarro;
+package com.telran.qa26.ilCarro.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
