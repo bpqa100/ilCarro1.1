@@ -7,62 +7,62 @@ public class RegistrationTestILCarro extends TestBase {
 
     @Test
     public void registrationTest() throws InterruptedException {
-        openRegForm();
+        app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
-        selectCheckBox();
-        pause(2000);
-        clickYallaButton();
-        pause(3000);
-        Assert.assertFalse(isRegistrationFormPresent());
+        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
+        app.getUserHelper().selectCheckBox();
+        app.getUserHelper().pause(2000);
+        app.getUserHelper().clickYallaButton();
+        app.getUserHelper().pause(3000);
+        Assert.assertFalse(app.getUserHelper().isRegistrationFormPresent());
     }
 
     @Test
     public void registrationTestNegative1() throws InterruptedException {     //empty fName
-        openRegForm();
+        app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        fillRefistrionForm("", "Ab", email, "Ab1234567");
-        selectCheckBox();
-        pause(2000);
-        clickYallaButton();
-        pause(3000);
-        Assert.assertTrue(isRegistrationFormPresent());
+        app.getUserHelper().fillRefistrionForm("", "Ab", email, "Ab1234567");
+        app.getUserHelper().selectCheckBox();
+        app.getUserHelper().pause(2000);
+        app.getUserHelper().clickYallaButton();
+        app.getUserHelper().pause(3000);
+        Assert.assertTrue(app.getUserHelper().isRegistrationFormPresent());
     }
 
     @Test
     public void registrationTestNegative2() throws InterruptedException {  //not valid email
-        openRegForm();
+        app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "gmail.com";
-        fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
-        selectCheckBox();
-        pause(2000);
-        clickYallaButton();
-        pause(3000);
-        Assert.assertTrue(isRegistrationFormPresent());
+        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
+        app.getUserHelper().selectCheckBox();
+        app.getUserHelper().pause(2000);
+        app.getUserHelper().clickYallaButton();
+        app.getUserHelper().pause(3000);
+        Assert.assertTrue(app.getUserHelper().isRegistrationFormPresent());
     }
 
     @Test
     public void registrationTestNegative3() throws InterruptedException {     //empty password
-        openRegForm();
+        app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        fillRefistrionForm("Alexey", "Ab", email, "");
-        selectCheckBox();
-        pause(2000);
-        clickYallaButton();
-        pause(3000);
-        Assert.assertTrue(isRegistrationFormPresent());
+        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "");
+        app.getUserHelper().selectCheckBox();
+        app.getUserHelper().pause(2000);
+        app.getUserHelper().clickYallaButton();
+        app.getUserHelper().pause(3000);
+        Assert.assertTrue(app.getUserHelper().isRegistrationFormPresent());
     }
 
     @Test
     public void registrationTestNegative4() throws InterruptedException {     //space password
-        openRegForm();
+        app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        fillRefistrionForm("Alexey", "Ab", email, "    ");
-        selectCheckBox();
-        pause(2000);
-        clickYallaButton();
-        pause(3000);
-        Assert.assertTrue(isRegistrationFormPresent());
+        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "    ");
+        app.getUserHelper().selectCheckBox();
+        app.getUserHelper().pause(2000);
+        app.getUserHelper().clickYallaButton();
+        app.getUserHelper().pause(3000);
+        Assert.assertTrue(app.getUserHelper().isRegistrationFormPresent());
     }
 
 

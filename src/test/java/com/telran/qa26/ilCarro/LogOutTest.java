@@ -7,15 +7,15 @@ public class LogOutTest extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
-        if (!isUserLoggedIn()) {
-            login();
+        if (!app.getUserHelper().isUserLoggedIn()) {
+            app.getUserHelper().login();
 
         }
     }
 
     @Test
     public void logOutTest() throws InterruptedException {
-        clickLogOutButtonOnHeader();
+        app.getUserHelper().clickLogOutButtonOnHeader();
     }
 
 }
