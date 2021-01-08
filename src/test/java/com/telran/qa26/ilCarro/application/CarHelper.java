@@ -16,19 +16,19 @@ public class CarHelper extends HelperBase {
         return isElementPresent(By.cssSelector("h3"));
     }
 
-    public void fillCarForm(String location,String address, String distanceInclude,String sn, String brand ,String model, String year ,String engine ,String fuel_consumption,String fuel ,String transmission , String wD) {
-        type(By.cssSelector("[name=\"country\"]"), location);
-        type(By.cssSelector("[name=\"address\"]"),address);
-        type(By.cssSelector("[name=\"distance_included\"]"),distanceInclude);
-        type(By.cssSelector("[name=\"serial_number\"]"),sn);
-        type(By.cssSelector("[name=\"make\"]"), brand);
-        type(By.cssSelector("[name=\"model\"]"), model);
-        type(By.cssSelector("[name=\"year\"]"), year);
-        type(By.cssSelector("[name=\"engine\"]"),engine);
-        type(By.xpath("//input[@placeholder='Fuel Consumption']"), fuel_consumption);
-        type(By.xpath("//input[@placeholder='Fuel']"),fuel);
-        type(By.xpath("//input[@placeholder='Transmition']"), transmission);
-        type(By.xpath("//input[@placeholder='WD']") ,wD);
+    public void fillCarForm(Car car) {
+        type(By.cssSelector("[name=\"country\"]"), car.getLocation());
+        type(By.cssSelector("[name=\"address\"]"), car.getAddress());
+        type(By.cssSelector("[name=\"distance_included\"]"), car.getDistanceInclude());
+        type(By.cssSelector("[name=\"serial_number\"]"), car.getSn());
+        type(By.cssSelector("[name=\"make\"]"), car.getBrand());
+        type(By.cssSelector("[name=\"model\"]"), car.getModel());
+        type(By.cssSelector("[name=\"year\"]"), car.getYear());
+        type(By.cssSelector("[name=\"engine\"]"), car.getEngine());
+        type(By.xpath("//input[@placeholder='Fuel Consumption']"), car.getFuel_consumption());
+        type(By.xpath("//input[@placeholder='Fuel']"), car.getFuel());
+        type(By.xpath("//input[@placeholder='Transmition']"), car.getTransmission());
+        type(By.xpath("//input[@placeholder='WD']"), car.getwD());
 
 
     }

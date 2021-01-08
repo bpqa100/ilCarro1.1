@@ -1,5 +1,6 @@
 package com.telran.qa26.ilCarro.application;
 
+import com.telran.qa26.model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,14 +9,17 @@ public class UserHelper extends HelperBase {
     public UserHelper(WebDriver wd) {
         super(wd);
     }
+
     public void login() throws InterruptedException {
         clickByCss("[href=\"/login\"]");
-        fillLoginForm("hi1608978430338@gmail.com", "Ab1234567");
+        fillLoginForm(new User()
+                .withtEmail("hi1608978430338@gmail.com")
+                .withPassword("Ab1234567"));
         pause(2000);
         clickByCss("[type=submit]");
     }
 
-        public boolean isRegistrationFormPresent() {
+    public boolean isRegistrationFormPresent() {
         return isElementPresent(By.xpath("//h2[contains(.,'Registration')]"));
     }
 
@@ -27,22 +31,22 @@ public class UserHelper extends HelperBase {
         click(By.cssSelector("[type=\"checkbox\"]"));
     }
 
-    public void fillRefistrionForm(String fName, String lName, String email, String password) {
-        type(By.xpath("//*[@id=\"first_name\"]"), fName);
-        type(By.cssSelector("[name=\"second_name\"]"), lName);
+    public void fillRefistrionForm(User user) {
+        type(By.xpath("//*[@id=\"first_name\"]"), user.getfName());
+        type(By.cssSelector("[name=\"second_name\"]"), user.getlName());
 
-        System.out.println("email is :" + email);
-        type(By.cssSelector("[name=\"email\"]"), email);
-        type(By.cssSelector("[id=\"password\"]"), password);
+        System.out.println("email is :" + user.getEmail());
+        type(By.cssSelector("[name=\"email\"]"), user.getEmail());
+        type(By.cssSelector("[id=\"password\"]"), user.getPassword());
     }
 
     public void openRegForm() {
         click(By.cssSelector("[href=\"/signup\"]"));
     }
 
-    public void fillLoginForm(String email, String password) {
-        typeByCss("[name=email]", email);
-        typeByCss("[name=password]", password);
+    public void fillLoginForm(User user) {
+        typeByCss("[name=email]", user.getEmail());
+        typeByCss("[name=password]", user.getPassword());
     }
 
     public void clickLogOutButtonOnHeader() {

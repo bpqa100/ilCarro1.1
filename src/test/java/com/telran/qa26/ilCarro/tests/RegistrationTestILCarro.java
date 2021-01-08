@@ -1,5 +1,6 @@
 package com.telran.qa26.ilCarro.tests;
 
+import com.telran.qa26.model.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,10 @@ public class RegistrationTestILCarro extends TestBase {
     public void registrationTest() throws InterruptedException {
         app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
+        app.getUserHelper().fillRefistrionForm(new User()
+                .withfName("Alexey").withlName("Ab")
+                .withtEmail(email)
+                .withPassword("Ab1234567"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -21,7 +25,11 @@ public class RegistrationTestILCarro extends TestBase {
     public void registrationTestNegative1() throws InterruptedException {     //empty fName
         app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        app.getUserHelper().fillRefistrionForm("", "Ab", email, "Ab1234567");
+        app.getUserHelper().fillRefistrionForm(new User()
+                .withfName("")
+                .withlName("Ab")
+                .withtEmail(email)
+                .withPassword("Ab1234567"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -33,7 +41,11 @@ public class RegistrationTestILCarro extends TestBase {
     public void registrationTestNegative2() throws InterruptedException {  //not valid email
         app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "gmail.com";
-        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "Ab1234567");
+        app.getUserHelper().fillRefistrionForm(new User()
+                .withfName("Alexey")
+                .withlName("Ab")
+                .withtEmail(email)
+                .withPassword("Ab1234567"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -45,7 +57,11 @@ public class RegistrationTestILCarro extends TestBase {
     public void registrationTestNegative3() throws InterruptedException {     //empty password
         app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "");
+        app.getUserHelper().fillRefistrionForm(new User()
+                .withfName("Alexey")
+                .withlName("Ab")
+                .withtEmail(email)
+                .withPassword(""));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -57,7 +73,11 @@ public class RegistrationTestILCarro extends TestBase {
     public void registrationTestNegative4() throws InterruptedException {     //space password
         app.getUserHelper().openRegForm();
         String email = "hi" + System.currentTimeMillis() + "@gmail.com";
-        app.getUserHelper().fillRefistrionForm("Alexey", "Ab", email, "    ");
+        app.getUserHelper().fillRefistrionForm(new User()
+                .withfName("Alexey")
+                .withlName("Ab")
+                .withtEmail(email)
+                .withPassword("    "));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
