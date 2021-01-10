@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class CarCreationTest extends TestBase {
 
 
-    @Test
+    @Test (enabled = false)
     public void testCarCreation() {
         app.getCarHelper().initAddNewCar();
         Assert.assertTrue(app.getCarHelper().isCarCreationFormPresent());

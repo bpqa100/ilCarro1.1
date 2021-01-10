@@ -15,7 +15,7 @@ public class UserHelper extends HelperBase {
         fillLoginForm(new User()
                 .withtEmail("hi1608978430338@gmail.com")
                 .withPassword("Ab1234567"));
-        pause(2000);
+        pause(3000);
         clickByCss("[type=submit]");
     }
 
@@ -51,6 +51,7 @@ public class UserHelper extends HelperBase {
 
     public void clickLogOutButtonOnHeader() {
         clickByXpath("//a[contains(.,'logOut')]");
+
     }
 
     public boolean isUserLoggedIn() {

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" verbose="1" >
+
+    <test name="Regression">
+        <classes>
+            <class name="com.telran.qa26.ilCarro.tests.RegistrationTestILCarro"/>
+            <class name="com.telran.qa26.ilCarro.tests.LoginTest"/>
+            <class name="com.telran.qa26.ilCarro.tests.LogOutTest"/>
+
+        </classes>
+    </test>
+</suite>

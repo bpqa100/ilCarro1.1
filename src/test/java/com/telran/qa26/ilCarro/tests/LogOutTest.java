@@ -10,12 +10,14 @@ public class LogOutTest extends TestBase {
         if (!app.getUserHelper().isUserLoggedIn()) {
             app.getUserHelper().login();
 
+
         }
     }
 
-    @Test
+    @Test//(enabled = false)
     public void logOutTest() throws InterruptedException {
         app.getUserHelper().clickLogOutButtonOnHeader();
+
     }
 
 }

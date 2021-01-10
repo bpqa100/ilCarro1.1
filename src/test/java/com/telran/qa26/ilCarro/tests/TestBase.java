@@ -1,19 +1,18 @@
 package com.telran.qa26.ilCarro.tests;
 
 import com.telran.qa26.ilCarro.application.AppManager;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 public class TestBase {
 
-    protected AppManager app = new AppManager();
+    protected static AppManager app = new AppManager();
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         app.start();
     }
 
-    @AfterMethod(enabled = false)
+    @AfterSuite//(enabled = false)
     public void tearDown() {
         app.stop();
     }
